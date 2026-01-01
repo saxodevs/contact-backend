@@ -15,6 +15,7 @@ app.use(cors({
 // app.use(bodyParser.json());
 app.use(express.json())
 
+
 app.post('/send-email', async (req, res) => {
     console.log('Request body:', req.body);
     const { name, email, message, subject } = req.body;
@@ -44,4 +45,8 @@ app.post('/send-email', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+});
+
+app.get("/", (req, res) => {
+  res.status(200).send("Contact backend is running 🚀");
 });
